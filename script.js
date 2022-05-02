@@ -13,7 +13,7 @@ function passwordLength() {
 // Starter Code Below
 
 // Get references to the #generate element / Tells computer where the button is
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -27,7 +27,7 @@ function writePassword() {
 }
 
 // Run writePassword function when the button is clicked
-generateBtn.addEventListener("click", writePassword());
+generate.addEventListener("click", writePassword);
 
 
 
