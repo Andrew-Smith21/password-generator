@@ -1,5 +1,6 @@
 // Assignment code here
 
+
 // Creating password object
 var newPassword = {
 
@@ -39,6 +40,7 @@ function charTypes() {
   newPassword.includeSpecial= window.confirm("Should the password contain special characters? Click OK for yes, Cancel for no.");
   console.log(newPassword.includeSpecial);
 
+  // ensure that at least one character type is selected
   if (newPassword.includeLowercase === false && newPassword.includeUppercase === false && newPassword.includeNumbers === false && newPassword.includeSpecial === false) {
     window.alert("Please choose at least one character type.");
     return charTypes();
@@ -52,7 +54,8 @@ function generatePassword() {
 
   getLength();
   charTypes();
-  console.log(newPassword);
+  
+  // switch function to determine set of characters to use
 }
 
 
@@ -76,7 +79,7 @@ function writePassword() {
 }
 
 // Run writePassword function when the button is clicked
-generate.addEventListener("click", generatePassword); // change to writePassword at the end
+generate.addEventListener("click", generatePassword); // !!!change to writePassword at the end!!!
 
 
 
