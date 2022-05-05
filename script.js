@@ -6,8 +6,7 @@
 // Numerical characters 0123456789
 
 // Creating password placeholder
-
-var result = "";
+//var result = "";
 
 // Creating password object
 var newPassword = {
@@ -58,7 +57,7 @@ function charTypes() {
   }
 } // end of function charTypes
 
-function makeThePassword(length) {
+function generatePassword(length) {
 
   // switch function to determine value of charBank
 
@@ -71,30 +70,18 @@ function makeThePassword(length) {
     result += charBank.charAt(Math.floor(Math.random() * charBankLength));
   }
   console.log(result);
+  return result;
 } // end of makeThePassword function
 
-function generatePassword() {
+function writePassword() {
 
   getLength();
   charTypes();
-  makeThePassword(newPassword.length);
-}
-
-
-// Starter Code Below
-
-// Get references to the #generate element / Tells computer where the button is
-// var generateBtn = document.querySelector("#generate");
-
-// Write password in the box
-function writePassword() {
-
-  generatePassword();
-  // var password = generatePassword();
+  
+  var password = generatePassword(newPassword.length);
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = result;
-
+  passwordText.value = password;
 }
 
 // Run writePassword function when the button is clicked
