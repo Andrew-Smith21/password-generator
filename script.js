@@ -5,6 +5,10 @@
 // Uppercase characters ABCDEFGHIJKLMNOPQRSTUVWXYZ
 // Numerical characters 0123456789
 
+// Creating password placeholder
+
+var result = "";
+
 // Creating password object
 var newPassword = {
 
@@ -67,9 +71,6 @@ function makeThePassword(length) {
     result += charBank.charAt(Math.floor(Math.random() * charBankLength));
   }
   console.log(result);
-  return result;
-  
-
 } // end of makeThePassword function
 
 function generatePassword() {
@@ -77,7 +78,6 @@ function generatePassword() {
   getLength();
   charTypes();
   makeThePassword(newPassword.length);
-  return result;
 }
 
 
@@ -89,11 +89,11 @@ function generatePassword() {
 // Write password in the box
 function writePassword() {
 
-  
-  var password = generatePassword();
+  generatePassword();
+  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = result;
 
 }
 
