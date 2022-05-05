@@ -1,5 +1,9 @@
 // Assignment code here
 
+// Special characters !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+// Lowercase characters abcdefghijklmnopqrstuvwxyz
+// Uppercase characters ABCDEFGHIJKLMNOPQRSTUVWXYZ
+// Numerical characters 0123456789
 
 // Creating password object
 var newPassword = {
@@ -10,6 +14,9 @@ var newPassword = {
   includeNumbers: true,
   includeSpecial: true
 }
+
+// Creating all-inclusive character bank
+var charBank = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
 // function to ask user how long the password should be
 function getLength() {
@@ -23,7 +30,7 @@ function getLength() {
     return getLength();
   }
   console.log(newPassword.length);
-}
+} // end of function getLength
 
 // function to ask user what types of characters to include in the password
 function charTypes() {
@@ -45,21 +52,33 @@ function charTypes() {
     window.alert("Please choose at least one character type.");
     return charTypes();
   }
+} // end of function charTypes
 
+function makeThePassword(length) {
 
+  // switch function to determine value of charBank
 
-}
+  var result = "";
+  var charBankLength = charBank.length;
+  console.log(newPassword.length);
+
+  for ( var i = 0; i < length; i++ ) {
+
+    result += charBank.charAt(Math.floor(Math.random() * charBankLength));
+  }
+  console.log(result);
+  return result;
+  
+
+} // end of makeThePassword function
 
 function generatePassword() {
 
   getLength();
   charTypes();
-  
-  // switch function to determine set of characters to use
+  makeThePassword(newPassword.length);
+  return result;
 }
-
-
-
 
 
 // Starter Code Below
@@ -79,8 +98,4 @@ function writePassword() {
 }
 
 // Run writePassword function when the button is clicked
-generate.addEventListener("click", generatePassword); // !!!change to writePassword at the end!!!
-
-
-
-
+generate.addEventListener("click", writePassword); // !!!change to writePassword at the end!!!
