@@ -61,6 +61,69 @@ function generatePassword(length) {
 
   // switch function to determine value of charBank
 
+  switch (true) {
+
+    case newPassword.includeLowercase && newPassword.includeUppercase && newPassword.includeNumbers && newPassword.includeSpecial: 
+        charBank = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        break;
+    
+    case newPassword.includeLowercase && newPassword.includeUppercase && newPassword.includeNumbers && !newPassword.includeSpecial: 
+        charBank = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        break;
+
+    case newPassword.includeLowercase && newPassword.includeUppercase && !newPassword.includeNumbers && newPassword.includeSpecial: 
+        charBank = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        break;
+
+    case newPassword.includeLowercase && !newPassword.includeUppercase && newPassword.includeNumbers && newPassword.includeSpecial: 
+        charBank = "abcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        break;
+        
+    case !newPassword.includeLowercase && newPassword.includeUppercase && newPassword.includeNumbers && newPassword.includeSpecial: 
+        charBank = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        break; 
+
+    case newPassword.includeLowercase && newPassword.includeUppercase && !newPassword.includeNumbers && !newPassword.includeSpecial: 
+        charBank = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        break;
+
+    case newPassword.includeLowercase && !newPassword.includeUppercase && newPassword.includeNumbers && !newPassword.includeSpecial: 
+        charBank = "abcdefghijklmnopqrstuvwxyz0123456789";
+        break;
+
+    case !newPassword.includeLowercase && newPassword.includeUppercase && newPassword.includeNumbers && !newPassword.includeSpecial: 
+        charBank = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        break;
+
+    case newPassword.includeLowercase && !newPassword.includeUppercase && !newPassword.includeNumbers && newPassword.includeSpecial: 
+        charBank = "abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        break;
+
+    case !newPassword.includeLowercase && newPassword.includeUppercase && !newPassword.includeNumbers && newPassword.includeSpecial: 
+        charBank = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        break;
+
+    case !newPassword.includeLowercase && !newPassword.includeUppercase && newPassword.includeNumbers && newPassword.includeSpecial: 
+        charBank = "0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        break;
+
+    case newPassword.includeLowercase && !newPassword.includeUppercase && !newPassword.includeNumbers && !newPassword.includeSpecial: 
+        charBank = "abcdefghijklmnopqrstuvwxyz";
+        break;
+
+    case !newPassword.includeLowercase && newPassword.includeUppercase && !newPassword.includeNumbers && !newPassword.includeSpecial: 
+        charBank = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        break;
+
+    case !newPassword.includeLowercase && !newPassword.includeUppercase && newPassword.includeNumbers && !newPassword.includeSpecial: 
+        charBank = "0123456789";
+        break;
+
+    case !newPassword.includeLowercase && !newPassword.includeUppercase && !newPassword.includeNumbers && newPassword.includeSpecial: 
+        charBank = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        break;
+  }
+
   var result = "";
   var charBankLength = charBank.length;
   console.log(newPassword.length);
