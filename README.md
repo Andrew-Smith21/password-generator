@@ -1,6 +1,6 @@
 # Password Generator
 
-![Portfolio Screenshot](/assets/images/portfolio-screenshot.jpg?raw=true)
+![Portfolio Screenshot](/assets/images/password-generator-screenshot.jpg?raw=true)
 
 ## Assignment
 Generate a random password that matches user selected criteria.
