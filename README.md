@@ -11,3 +11,4 @@ Generate a random password that matches user selected criteria.
 * Javascript
 
 ## Website
+https://andrew-smith21.github.io/password-generator/
